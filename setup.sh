@@ -28,7 +28,7 @@ error() {
 #######################################
 input_user() {
     local USR
-    echo "Provide your username for git config"
+    echo "Provide your username for git config"  >&2
     read -p "Username: " USR
     echo $USR
 }
@@ -83,6 +83,19 @@ install_git() {
   GIT_VERSION=$(git --version)
   GH_VERSION=$(gh --version)
   echo "Installed Git $GIT_VERSION and GH $GH_VERSION" >> ./install.log
+}
+
+#######################################
+# Git config
+#######################################
+config_git() {
+  clear
+  echo "Installing git"
+  GITNAME=$(input_user)
+  GITMAIL=$(input_email)
+  git config --global user.name $GITNAME
+  git config --global user.email $GITMAIL
+  echo "Configured Git" >> ./install.log
 }
 
 #######################################
@@ -146,11 +159,7 @@ main () {
   install_psql
   install_vsc
   install_terraform
+  echo "All done" && exit 1
 }
 
 main "$@"
-GITNAME=$(input_user)
-GITMAIL=$(input_email)
-git config --global user.name $GITNAME
-git config --global user.email $GITMAIL
-echo "All done" && exit 1
