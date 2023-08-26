@@ -28,7 +28,7 @@ error() {
 #######################################
 input_user() {
     local USR
-    echo "Provide your username for git config" >&2
+    echo "Provide your username for git config"
     read -p "Username: " USR
     echo $USR
 }
