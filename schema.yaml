@@ -1,0 +1,232 @@
+# Title shown in Application Information tab.
+title: Avaloq Cloud Framework
+# Sub Title shown in Application Information tab.
+description: The Avaloq Cloud Framework helps to deploy banking solutions on Oracle Cloud Infrastructure (OCI)
+informationalText: This framework helps developers to provision a hosting environment for the Avaloq Banking Suite on Oracle Cloud Infrastructure (OCI).
+schemaVersion: 1.1.0
+version: "20230801"
+
+# URL of Logo Icon used on Application Information tab. Logo must be 130x130 pixels.
+# logoUrl: https://cloudmarketplace.oracle.com/marketplace/content?contentId=53066708
+logoUrl: https://imgur.com/5VPX3M0
+
+locale: "en"
+variableGroups:
+  - title: "Tenant"
+    variables:
+      - ${prt}
+      - ${loc}
+      - ${org}
+      - ${prj}
+      - ${own}
+      - ${stg}
+      - ${src}
+
+  - title: "Banking Suite"
+    variables:
+      - ${acp}
+      - ${client}
+      - ${capi}
+  
+  - title: "Operation and Compliance Controls"
+    variables:
+      - ${cls}
+      - ${cis}
+      - ${pci}
+      - ${c5} 
+
+  - title: "Network Configuration"
+    visible: true
+    variables:
+      - ${inet}
+      - ${nat}
+      - ${osn}
+
+  - title: "Restrictions"
+    visible: true
+    variables:
+      - ${protect}
+
+  - title: "Hidden"
+    variables:
+      - tenancy_ocid
+      - compartment_ocid
+      - region
+      - current_user_ocid
+    visible: false
+
+
+variables:
+  tenancy_ocid:
+    title: "Tenancy"
+    description: "The Oracle Cloud Identifier for the active tenancy"
+    type: string
+    required: true
+  
+  compartment_ocid:
+    title: "Compartment"
+    description: "The Oracle Cloud Identifier for the active compartment"
+    type: string
+    required: true
+  
+  region:
+    title: "Region"
+    description: "The name for the active region"
+    type: string
+    required: true
+  
+  current_user_ocid:
+    title: "User ID"
+    description: "The Oracle Cloud Identifier for the active user"
+    type: string
+    required: true
+  
+  prt:
+    title: "Parent Compartment"
+    description: "The Oracle Cloud Identifier for the parent compartment. The default should only be changed by experienced users."
+    type: oci:identity:compartment:id
+    dependsOn:
+      compartmentId: tenancy_ocid
+      accessLevel: ANY
+      lifecycleState: ACTIVE
+    default: tenancy_ocid
+    required: true
+
+  org:
+    title: "Organization"
+    description: "The organization represents an unique identifier for a service owner and triggers the definition of groups on root compartment level"
+    type: string
+    default: "Organization"
+    minLength: 1
+    maxLength: 25
+    pattern: "^[a-zA-Z]+$"
+    required: true
+    
+  loc:
+    title: "Region"
+    description: "..."
+    type: oci:identity:region:name
+    dependsOn:
+      compartmentId: tenancy_ocid
+      accessLevel: ANY
+      lifecycleState: ACTIVE
+    default: region
+    required: true
+
+  prj:
+    title: "Project"
+    description: "The project name represents an unique identifier for a service defined on root compartment level"
+    type: string
+    default: "Name"
+    minLength: 1
+    maxLength: 25
+    pattern: "^[a-zA-Z]+$"
+    required: true
+
+  stg:
+    title: "Stage"
+    description: "Selecting the lifecycle stage preselects an appropriate collection of operational controls"
+    type: enum
+    default: "DEV"
+    required: true
+    enum:
+      - DEV
+      - SIT
+      - TEST
+      - PROD
+
+  src:
+    title: "Source"
+    description: "Provide an URL for the ACP image"
+    type: string
+    default: "URL"
+    required: false
+
+  own:
+    title: "Owner"
+    description: "Provide an eMail address for the technical administrator"
+    type: string
+    default: "RobotNotExist@avaloq.com"
+    required: false
+
+# Conrols  
+  cls:
+    title: "Framework"
+    description: "Selecting the comliance model preselects appropriate resource and control parameter"
+    type: enum
+    default: "FINMA"
+    enum:
+      - FINMA
+      - BAFIN
+      - MARS
+      - Other
+    required: true
+
+  cis:
+    type: boolean
+    title: "CIS"
+    description: "CIS Benchmark (https://www.cisecurity.org/cis-benchmarks)"
+    default: false
+    required: false
+
+  pci:
+    type: boolean
+    title: "PCI"
+    description: "PCI Security Standard (https://www.pcisecuritystandards.org/)"
+    default: false
+    required: false
+
+  c5:
+    type: boolean
+    title: "BSI C5"
+    description: "Cloud Computing Compliance Criteria Catalog (https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/kriterienkatalog-c5_node.html)"
+    default: false
+    required: false
+
+# Avaloq Banking Suite
+  acp:
+    type: boolean
+    title: "Core Platform"
+    default: true
+    required: true
+
+  client:
+    type: boolean
+    title: "SmartClient"
+    default: false
+    required: false
+
+  capi:
+    type: boolean
+    title: "Community API"
+    default: false
+    required: false
+
+# Network Options
+  inet:
+    type: boolean
+    title: "Internet access"
+    required: true
+    default: false
+
+  nat:
+    type: boolean
+    title: "NAT for private subnets"
+    required: true
+    default: true
+
+  osn:
+    type: enum
+    title: "Scope of Oracle Cloud Services, attached to the service resident."
+    required: true
+    enum:
+      - ALL
+      - STORAGE
+      - DISABLE
+
+# Domain Protection
+  protect:
+    type: boolean
+    title: "Allow administrator domains to be destroyed?"
+    default: false
+    required: true
