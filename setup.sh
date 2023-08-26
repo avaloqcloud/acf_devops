@@ -62,7 +62,7 @@ install_golang() {
   echo "Installing golang"
   apt search golang-go
   apt search gccgo-go
-  apt install golang-go
+  apt install golang-go -y
   GO_VERSION=$(go version)
   echo "Installed Go $GO_VERSION" >> ./install.log
 }
