@@ -17,12 +17,12 @@ The DevOps workplace is written for Chromebooks and requires the activation of t
 == Branching
 We use Github as Version Control System, and leverage the Feature Branch Strategy to keep the main branch stable. It enables contributors to maintain development branches separately, based on the feature. Code is stored in four major branches named
 
-* **main** is stable the stable release that contains the deployment reference code, 
-* **apply** represents the current deployment release, before code is merged from the 'plan' branch, 'apply' code is merged in the 'main' branch 
-* **plan** is the code for the next release and enables operators to perform system integration testing, before is merged from the 'dev' branch, it has to validated and testet  
-* **name_dev** is derived from the 'main' branch and is the reference for module development, it is not stable, before code is marked is ready.
+* **stable** is the release that contains the deployment reference code, 
+* **main** represents the current deployment release, before code is merged from the 'test' branch, 'main' code is merged in the 'stable' branch 
+* **test** is the code for the next release and enables operators to perform system integration testing, before is merged from the 'module' branches, it has to validated and testet  
+* **module** is derived from the 'stable' branch and is the reference for module development, it is not stable, before code is marked is ready.
 
-For the work on a new feature, a feature branch us created from the 'plan' branch as base branch. When the code is committed, the developer has to run module tests. Dependency test have to performed to ensure 'destroy' is functioning and 'apply' can be performed without destroying existing resources. When all test cases and manual tests are passed the code is merged with the 'plan' branch, the unit tests and manual tests have to be run again to check the backward compatibility and ensuring no previous changes were broken. 
+For the work on a new feature, a feature branch us created from the 'test' branch as base branch. When the code is committed, the developer has to run module tests. Dependency test have to performed to ensure 'destroy' is functioning and 'main' can be performed without destroying existing resources. When all test cases and manual tests are passed the code is merged with the 'test' branch, the unit tests and manual tests have to be run again to check the backward compatibility and ensuring no previous changes were broken. 
 
 [#img-branching] 
 .Branch Strategy 
@@ -31,7 +31,13 @@ image::/img/branch.drawio.svg[Git Branches]
 This figure illustrates the branch strategy. The code is maintained in a stable manner and can be rolled back to the previous version. The main branch remains stable, implementing features, the latest plan branch code becomes the the base, for new features this cycle is repeated.
 
 ## Tools
-...
+Terraform
+Visual Studio Code
+Github CLI
+Git Client
+Python 3
+PostgreSQL
+Nano CLI Editor
 
 
 === Contributing
