@@ -8,7 +8,7 @@ image:https://img.shields.io/badge/license-apache-green[link="LICENSE"]
 Infrastructure as Code (IaC) tools help us to promote the best practices, which make the process of building and configuring the infrastructure more effective, reduce costs and operational effort. With the DevOps workplace we harmonize the toolset, employed to manage the infrastructure through a descriptive model. While the code is maintianed in configuration modules, stored in version control systems, many development tools remain locally installed. Through a common setup, we foster well-documented code formats, provide greater accuracy, reduce errors, and increase speed and consistency in code-based infrastructure automation. Our toolset is open source based and allows DevOps teams to control and customize the required infrastructure instead of manually configuring the servers and operating systems. The following command installs an IaC developement environment on the Chromebook Linux runtime
 
 ```bash
-wget  -q -O - https://raw.githubusercontent.com/torstenboettjer/avaloq_devops_workplace/main/setup.sh | sudo bash
+wget  -q -O - https://raw.githubusercontent.com/avaloqcloud/acf_devops/main/setup.sh | sudo bash
 ```
 
 ## Preparation
