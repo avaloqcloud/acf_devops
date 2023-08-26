@@ -41,7 +41,7 @@ input_email() {
 }
 
 #######################################
-# Install developer tools
+# Install developer tools and Python
 #######################################
 install_python() {
   clear
@@ -52,6 +52,19 @@ install_python() {
   apt install python3-pip -y 
   PYTHON_VERSION=$(python3 --version)
   echo "Installed Python3 $PYTHON_VERSION" >> ./install.log
+}
+
+#######################################
+# Install Golang
+#######################################
+install_golang() {
+  clear
+  echo "Installing golang"
+  apt search golang-go
+  apt search gccgo-go
+  apt install golang-go
+  GO_VERSION=$(go version)
+  echo "Installed Go $GO_VERSION" >> ./install.log
 }
 
 #######################################
