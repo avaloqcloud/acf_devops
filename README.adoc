@@ -38,6 +38,7 @@ The following tools will be installed with the DevOps Workplace:
 * link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git Client (CLI)]
 * link:https://cli.github.com[Github Command Line Extension (CLI)]
 * link:https://www.python.org[Python 3 (CLI)]
+* link:https://go.dev(Golang)
 * link:https://www.postgresql.org[PostgreSQL (CLI)]
 * link:https://www.nano-editor.org[Nano Text Editor (CLI)]
 
