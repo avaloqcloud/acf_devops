@@ -172,6 +172,7 @@ main () {
   install_psql
   install_vsc
   install_terraform
+  install_golang
   echo "All done" && exit 1
 }
 
