@@ -31,13 +31,14 @@ image::/img/branch.drawio.svg[Git Branches]
 This figure illustrates the branch strategy. The code is maintained in a stable manner and can be rolled back to the previous version. The main branch remains stable, implementing features, the latest plan branch code becomes the the base, for new features this cycle is repeated.
 
 ## Tools
-Terraform
-Visual Studio Code
-Github CLI
-Git Client
-Python 3
-PostgreSQL
-Nano CLI Editor
+The following tools will be installed with the DevOps Workplace:
+* [Visual Studio Code (GUI)](https://code.visualstudio.com/)
+* [Terraform (CLI)](https://www.terraform.io/)
+* [Git Client (CLI)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Github Command Line Extension (CLI)](https://cli.github.com/)
+* [Python 3 (CLI)](https://www.python.org/)
+* [PostgreSQL (CLI)](https://www.postgresql.org/)
+* [Nano Text Editor (CLI)](https://www.nano-editor.org/)
 
 
 === Contributing
