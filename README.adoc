@@ -32,13 +32,13 @@ This figure illustrates the branch strategy. The code is maintained in a stable 
 
 ## Tools
 The following tools will be installed with the DevOps Workplace:
-* [Visual Studio Code (GUI)](https://code.visualstudio.com/)
-* [Terraform (CLI)](https://www.terraform.io/)
-* [Git Client (CLI)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [Github Command Line Extension (CLI)](https://cli.github.com/)
-* [Python 3 (CLI)](https://www.python.org/)
-* [PostgreSQL (CLI)](https://www.postgresql.org/)
-* [Nano Text Editor (CLI)](https://www.nano-editor.org/)
+.[Visual Studio Code (GUI)](https://code.visualstudio.com/)
+.[Terraform (CLI)](https://www.terraform.io/)
+.[Git Client (CLI)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+.[Github Command Line Extension (CLI)](https://cli.github.com/)
+.[Python 3 (CLI)](https://www.python.org/)
+.[PostgreSQL (CLI)](https://www.postgresql.org/)
+.[Nano Text Editor (CLI)](https://www.nano-editor.org/)
 
 
 === Contributing
