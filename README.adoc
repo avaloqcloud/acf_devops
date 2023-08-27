@@ -12,7 +12,15 @@ wget  -q -O - https://raw.githubusercontent.com/avaloqcloud/acf_devops/main/setu
 ```
 
 ## Preparation
-The DevOps workplace is written for Chromebooks and requires the activation of the link:https://support.google.com/chromebook/answer/9145439?sjid=6402904049956629838-EU[Linux Development Environment] and user access to the link:https://github.com/avaloqcloud[Avaloq Cloud Github Repository] is required.
+The DevOps workplace is written for Chromebooks and requires the activation of the link:https://support.google.com/chromebook/answer/9145439?sjid=6402904049956629838-EU[Linux Development Environment] and user access to the link:https://github.com/avaloqcloud[Avaloq Cloud Github Repository].
+
+## Finishing
+After installation users should configure the git client consider setting up a PostgreSQL user account.
+
+```bash
+git config --local user.name "Your Name"
+git config --local user.email youraddress@mail.com
+```
 
 == Branching
 We use Github as Version Control System, and leverage the Feature Branch Strategy to keep the main branch stable. It enables contributors to maintain development branches separately, based on the feature. Code is stored in four major branches named
