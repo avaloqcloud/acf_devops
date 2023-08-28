@@ -1,0 +1,38 @@
+Deployment Strategy
+
+Feature branch creation: When starting on a new task or feature, create a new branch from main. This branch can be named something like feature/user-login.
+Development and commits: Make your changes in this branch and commit them.
+Stage branch: After finishing your part, you merge your feature branch into a stage branch created previously. This branch was created from main and it's where the team can see combined updates.
+Pull request: Once testing is done in the stage branch and things look good, you raise a Pull Request (PR) from stage to main.
+Code review: Team members review the changes in the PR. They may suggest improvements or corrections.
+Merge & deploy: After approval, the PR gets merged into main. The code in main is then deployed to production.
+This process, while structured, may feel a bit layered, especially for smaller teams or projects.
+
+The classic Blue/Green strategy: continuous delivery with safety
+Here's a quick overview of the Blue/Green method:
+
+Blue environment: This is your current production environment. It’s stable and serves your users.
+Green environment: Parallel to Blue, you have the Green environment. It's an identical setup but it’s where you deploy new changes for testing.
+Switch: Once you're confident that the Green environment is stable after thorough testing, you switch user traffic to Green. Green becomes Blue (the new production) and vice-versa.
+The advantage? Zero downtime. The trade-off? Maintaining two identical production environments.
+
+Our Blue/Green adaptation with Netlify: simplifying deployment
+We've tailored the Blue/Green approach to make deployment straightforward and efficient. Here's how:
+
+1. Blue control with Netlify:
+On Netlify, we paused automatic updates for our primary site (Blue), the www.webdevpath.co environment. This gives us control over when we push the new changes live, but only after we've given them a comprehensive check.
+
+2. Green testing environment:
+We crafted a parallel environment, named webdevpathstage (Green), on Netlify also linked to our GitHub repository. Changes that merge into the main branch first roll out here, granting us a testing phase before going public (manual deploy) on the primary site (Blue).
+
+Netlify stage and production environments
+
+3. Dedicated environment variables:
+Tools like Google Analytics have bespoke settings for both Blue and Green, ensuring no mix-up or overlapping of data.
+
+Advantages of our adaptation:
+Zero downtime: By separating the environments, we ensure continuous service for our users, eliminating disruptions during updates.
+Developers in the spotlight: This model lets developers stay in their element, focusing on code without getting bogged down in complex deployment procedures.
+DevOps hat ready: For those curious about the intricacies of deployment, our system provides an entry point. With the correct access and a bit of guidance, any team member can venture into DevOps, manually deploying in the production environment and gaining invaluable experience.
+Finding what works for your project
+The best method fits your team's style and your project's needs. While GitHub Flow is a step-by-step process, Blue/Green offers smooth and constant updates. Our version combines the strengths of both. The main point? Teamwork should be easy, and users should get value quickly. We learned a lot from our Web Dev Path project, and we think you can learn from our experience too!

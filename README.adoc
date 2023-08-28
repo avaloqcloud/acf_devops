@@ -14,6 +14,9 @@ wget  -q -O - https://raw.githubusercontent.com/avaloqcloud/acf_devops/main/setu
 ## Preparation
 The DevOps workplace is written for Chromebooks and requires the activation of the link:https://support.google.com/chromebook/answer/9145439?sjid=6402904049956629838-EU[Linux Development Environment] and user access to the link:https://github.com/avaloqcloud[Avaloq Cloud Github Repository] is required.
 
+## Deployment Strategy
+For smooth teamwork, making sure developers and operators code in sync, is essential. This is where deployment strategies, a pillar in the DevOps world, step in. For Avaloq Cloud Services we adopt a tailored version of GitHub Flow.
+
 == Branching
 We use Github as Version Control System, and leverage the Feature Branch Strategy to keep the main branch stable. It enables contributors to maintain development branches separately, based on the feature. Code is stored in four major branches named
 
