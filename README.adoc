@@ -12,7 +12,15 @@ wget  -q -O - https://raw.githubusercontent.com/avaloqcloud/acf_devops/main/setu
 ```
 
 ## Preparation
-The DevOps workplace is written for Chromebooks and requires the activation of the link:https://support.google.com/chromebook/answer/9145439?sjid=6402904049956629838-EU[Linux Development Environment] and user access to the link:https://github.com/avaloqcloud[Avaloq Cloud Github Repository] is required.
+The DevOps workplace is written for Chromebooks and requires the activation of the link:https://support.google.com/chromebook/answer/9145439?sjid=6402904049956629838-EU[Linux Development Environment] and user access to the link:https://github.com/avaloqcloud[Avaloq Cloud Github Repository].
+
+## Finishing
+After installation users should configure the git client consider setting up a PostgreSQL user account.
+
+```bash
+git config --local user.name "Your Name"
+git config --local user.email youraddress@mail.com
+```
 
 ## Deployment Strategy
 For smooth teamwork, making sure developers and operators code in sync, is essential. This is where deployment strategies, a pillar in the DevOps world, step in. For Avaloq Cloud Services we adopt a tailored version of GitHub Flow.
@@ -34,14 +42,16 @@ image::/img/branch.drawio.svg[Git Branches]
 This figure illustrates the branch strategy. The code is maintained in a stable manner and can be rolled back to the previous version. The main branch remains stable, implementing features, the latest plan branch code becomes the the base, for new features this cycle is repeated.
 
 ## Tools
-Terraform
-Visual Studio Code
-Github CLI
-Git Client
-Python 3
-PostgreSQL
-Nano CLI Editor
+The following tools will be installed with the DevOps Workplace:
 
+* link:https://code.visualstudio.com[Visual Studio Code (GUI)]
+* link:https://www.terraform.io[Terraform (CLI)]
+* link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git Client (CLI)]
+* link:https://cli.github.com[Github Command Line Extension (CLI)]
+* link:https://www.python.org[Python 3 (CLI)]
+* link:https://go.dev[Golang (CLI)]
+* link:https://www.postgresql.org[PostgreSQL (CLI)]
+* link:https://www.nano-editor.org[Nano Text Editor (CLI)]
 
 === Contributing
 This project is a community project the code is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Avaloq appreciates any contributions that are made by the open source community.

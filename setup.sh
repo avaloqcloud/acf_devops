@@ -64,7 +64,7 @@ install_golang() {
   apt search gccgo-go
   apt install golang-go -y
   GO_VERSION=$(go version)
-  echo "Installed Go $GO_VERSION" >> ./install.log
+  echo "Installed $GO_VERSION" >> ./install.log
 }
 
 #######################################
@@ -172,6 +172,7 @@ main () {
   install_psql
   install_vsc
   install_terraform
+  install_golang
   echo "All done" && exit 1
 }
 
