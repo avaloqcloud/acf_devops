@@ -35,3 +35,7 @@ terraform.rc
 
 # Ignore local state files
 *.lock.hcl
+
+# Ignore local devbox
+.devbox
+devbox.lock

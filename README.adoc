@@ -53,6 +53,10 @@ The following tools will be installed with the DevOps Workplace:
 * link:https://www.postgresql.org[PostgreSQL (CLI)]
 * link:https://www.nano-editor.org[Nano Text Editor (CLI)]
 
+### Devbox
+
+Installing dependencies using link:https://www.jetpack.io/devbox[Devbox] or link:https://devbox.sh/github.com/avaloqcloud/acf_devops?branch=main[image:https://jetpack.io/img/devbox/open-in-devbox.svg[Open In Devbox.sh]]
+
 === Contributing
 This project is a community project the code is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Avaloq appreciates any contributions that are made by the open source community.
 
